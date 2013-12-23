@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.ui;
+package fr.nover.yana.installWizard.ui;
 
 import fr.nover.yana.R;
-import fr.nover.yana.assistant_installation.wizard.model.MultipleFixedChoicePage;
-import fr.nover.yana.assistant_installation.wizard.model.Page;
-
+import fr.nover.yana.installWizard.model.MultipleFixedChoicePage;
+import fr.nover.yana.installWizard.model.Page;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;

@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.model;
+package fr.nover.yana.installWizard.ui;
 
-import java.util.ArrayList;
+import fr.nover.yana.installWizard.model.Page;
 
-/**
- * Represents a node in the page tree. Can either be a single page, or a page container.
- */
-public interface PageTreeNode {
-    public Page findByKey(String key);
-    public void flattenCurrentPageSequence(ArrayList<Page> dest);
+public interface PageFragmentCallbacks {
+    Page onGetPage(String key);
 }

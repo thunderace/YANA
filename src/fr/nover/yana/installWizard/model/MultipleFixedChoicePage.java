@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.model;
+package fr.nover.yana.installWizard.model;
 
-import fr.nover.yana.assistant_installation.wizard.ui.MultipleChoiceFragment;
-
+import fr.nover.yana.installWizard.ui.MultipleChoiceFragment;
 import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;

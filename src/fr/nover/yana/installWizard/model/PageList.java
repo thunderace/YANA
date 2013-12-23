@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.model;
+package fr.nover.yana.installWizard.model;
 
 import java.util.ArrayList;
 

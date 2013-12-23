@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.model;
+package fr.nover.yana.installWizard.model;
 
 /**
  * Represents a single line item on the final review page.
  *
- * @see fr.nover.yana.assistant_installation.wizard.ui.ReviewFragment
+ * @see fr.nover.yana.installWizard.ui.ReviewFragment
  */
 public class ReviewItem {
     public static final int DEFAULT_WEIGHT = 0;

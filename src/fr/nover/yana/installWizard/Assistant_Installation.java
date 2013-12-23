@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation;
+package fr.nover.yana.installWizard;
 
 import fr.nover.yana.R;
-import fr.nover.yana.assistant_installation.wizard.model.AbstractWizardModel;
-import fr.nover.yana.assistant_installation.wizard.model.ModelCallbacks;
-import fr.nover.yana.assistant_installation.wizard.model.Page;
-import fr.nover.yana.assistant_installation.wizard.ui.PageFragmentCallbacks;
-import fr.nover.yana.assistant_installation.wizard.ui.ReviewFragment;
-import fr.nover.yana.assistant_installation.wizard.ui.StepPagerStrip;
-
+import fr.nover.yana.installWizard.model.AbstractWizardModel;
+import fr.nover.yana.installWizard.model.ModelCallbacks;
+import fr.nover.yana.installWizard.model.Page;
+import fr.nover.yana.installWizard.ui.PageFragmentCallbacks;
+import fr.nover.yana.installWizard.ui.ReviewFragment;
+import fr.nover.yana.installWizard.ui.StepPagerStrip;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -47,7 +46,7 @@ public class Assistant_Installation extends FragmentActivity implements
 
     private boolean mEditingAfterReview;
 
-    private AbstractWizardModel mWizardModel = new Stockage_AI(this);
+    private AbstractWizardModel mWizardModel = new AIStorage(this);
 
     private boolean mConsumePageSelectedEvent;
 
@@ -100,7 +99,7 @@ public class Assistant_Installation extends FragmentActivity implements
             }
         });
         
-        final Intent get_config = new Intent(this, get_config.class);
+        final Intent get_config = new Intent(this, Config.class);
 
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,7 +8,7 @@
 package fr.nover.yana;
 
 import fr.nover.yana.R;
-import fr.nover.yana.assistant_installation.Assistant_Installation;
+import fr.nover.yana.installWizard.Assistant_Installation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.ListPreference;

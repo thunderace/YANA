@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.model;
+package fr.nover.yana.installWizard.model;
+
+import java.util.ArrayList;
 
 /**
- * Callback interface connecting {@link Page}, {@link AbstractWizardModel}, and model container
- * objects (e.g. {@link fr.nover.yana.assistant_installation.MainActivity}.
+ * Represents a node in the page tree. Can either be a single page, or a page container.
  */
-public interface ModelCallbacks {
-    void onPageDataChanged(Page page);
-    void onPageTreeChanged();
+public interface PageTreeNode {
+    public Page findByKey(String key);
+    public void flattenCurrentPageSequence(ArrayList<Page> dest);
 }

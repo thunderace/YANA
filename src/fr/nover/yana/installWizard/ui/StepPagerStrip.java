@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.ui;
+package fr.nover.yana.installWizard.ui;
 
 import fr.nover.yana.R;
 

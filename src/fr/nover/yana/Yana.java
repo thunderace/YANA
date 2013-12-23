@@ -58,7 +58,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Random;
 
-import fr.nover.yana.assistant_installation.Assistant_Installation;
+import fr.nover.yana.installWizard.Assistant_Installation;
 import fr.nover.yana.passerelles.Traitement;
 import fr.nover.yana.passerelles.ShakeDetector;
 import fr.nover.yana.passerelles.ExpandableListAdapter;

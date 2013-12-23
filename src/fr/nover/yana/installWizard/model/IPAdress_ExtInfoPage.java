@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.model;
+package fr.nover.yana.installWizard.model;
 
-import fr.nover.yana.assistant_installation.wizard.ui.IPAdress_ExtInfoFragment;
-
+import fr.nover.yana.installWizard.ui.IPAdressExtInfoFragment;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 
@@ -37,7 +36,7 @@ public class IPAdress_ExtInfoPage extends Page {
 
     @Override
     public Fragment createFragment() {
-        return IPAdress_ExtInfoFragment.create(getKey());
+        return IPAdressExtInfoFragment.create(getKey());
     }
 
     @Override

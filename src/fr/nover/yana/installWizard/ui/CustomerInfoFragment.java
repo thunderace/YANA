@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.ui;
+package fr.nover.yana.installWizard.ui;
 
 import fr.nover.yana.R;
-import fr.nover.yana.assistant_installation.wizard.model.IPAdress_ExtInfoPage;
-
+import fr.nover.yana.installWizard.model.CustomerInfoPage;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -31,26 +30,26 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
-public class IPAdress_ExtInfoFragment extends Fragment {
+public class CustomerInfoFragment extends Fragment {
     private static final String ARG_KEY = "key";
 
     private PageFragmentCallbacks mCallbacks;
     private String mKey;
-    private IPAdress_ExtInfoPage mPage;
-    private TextView mIPView;
-    private TextView mSSIDView;
-    private TextView mLiensView;
+    private CustomerInfoPage mPage;
+    private TextView mNameView;
+    private TextView mSurNameView;
+    private TextView mNickNameView;
 
-    public static IPAdress_ExtInfoFragment create(String key) {
+    public static CustomerInfoFragment create(String key) {
         Bundle args = new Bundle();
         args.putString(ARG_KEY, key);
 
-        IPAdress_ExtInfoFragment fragment = new IPAdress_ExtInfoFragment();
+        CustomerInfoFragment fragment = new CustomerInfoFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public IPAdress_ExtInfoFragment() {
+    public CustomerInfoFragment() {
     }
 
     @Override
@@ -59,23 +58,23 @@ public class IPAdress_ExtInfoFragment extends Fragment {
 
         Bundle args = getArguments();
         mKey = args.getString(ARG_KEY);
-        mPage = (IPAdress_ExtInfoPage) mCallbacks.onGetPage(mKey);
+        mPage = (CustomerInfoPage) mCallbacks.onGetPage(mKey);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_page_ipadress_ext_info, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_page_customer_info, container, false);
         ((TextView) rootView.findViewById(android.R.id.title)).setText(mPage.getTitle());
 
-        mIPView = ((TextView) rootView.findViewById(R.id.ipadress_int));
-        mIPView.setText(mPage.getData().getString(IPAdress_ExtInfoPage.IPADRESS_DATA_KEY));
+        mNameView = ((TextView) rootView.findViewById(R.id.your_name));
+        mNameView.setText(mPage.getData().getString(CustomerInfoPage.NAME_DATA_KEY));
 
-        mSSIDView = ((TextView) rootView.findViewById(R.id.SSID));
-        mSSIDView.setText(mPage.getData().getString(IPAdress_ExtInfoPage.SSID_DATA_KEY));
+        mSurNameView = ((TextView) rootView.findViewById(R.id.your_surname));
+        mSurNameView.setText(mPage.getData().getString(CustomerInfoPage.SURNAME_DATA_KEY));
         
-        mLiensView = ((TextView) rootView.findViewById(R.id.ipadress_ext));
-        mLiensView.setText(mPage.getData().getString(IPAdress_ExtInfoPage.IPADRESS_EXT_DATA_KEY));
+        mNickNameView = ((TextView) rootView.findViewById(R.id.your_nickname));
+        mNickNameView.setText(mPage.getData().getString(CustomerInfoPage.NICKNAME_DATA_KEY));
         return rootView;
     }
 
@@ -100,7 +99,7 @@ public class IPAdress_ExtInfoFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mIPView.addTextChangedListener(new TextWatcher() {
+        mNameView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1,
                     int i2) {
@@ -112,13 +111,13 @@ public class IPAdress_ExtInfoFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                mPage.getData().putString(IPAdress_ExtInfoPage.IPADRESS_DATA_KEY,
+                mPage.getData().putString(CustomerInfoPage.NAME_DATA_KEY,
                         (editable != null) ? editable.toString() : null);
                 mPage.notifyDataChanged();
             }
         });
 
-        mSSIDView.addTextChangedListener(new TextWatcher() {
+        mSurNameView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1,
                     int i2) {
@@ -130,13 +129,13 @@ public class IPAdress_ExtInfoFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                mPage.getData().putString(IPAdress_ExtInfoPage.SSID_DATA_KEY,
+                mPage.getData().putString(CustomerInfoPage.SURNAME_DATA_KEY,
                         (editable != null) ? editable.toString() : null);
                 mPage.notifyDataChanged();
             }
         });
         
-        mLiensView.addTextChangedListener(new TextWatcher() {
+        mNickNameView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1,
                     int i2) {
@@ -148,7 +147,7 @@ public class IPAdress_ExtInfoFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                mPage.getData().putString(IPAdress_ExtInfoPage.IPADRESS_EXT_DATA_KEY,
+                mPage.getData().putString(CustomerInfoPage.NICKNAME_DATA_KEY,
                         (editable != null) ? editable.toString() : null);
                 mPage.notifyDataChanged();
             }
@@ -161,7 +160,7 @@ public class IPAdress_ExtInfoFragment extends Fragment {
 
         // In a future update to the support library, this should override setUserVisibleHint
         // instead of setMenuVisibility.
-        if (mIPView != null) {
+        if (mNameView != null) {
             InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(
                     Context.INPUT_METHOD_SERVICE);
             if (!menuVisible) {

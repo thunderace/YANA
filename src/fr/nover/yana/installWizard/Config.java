@@ -1,4 +1,4 @@
-package fr.nover.yana.assistant_installation;
+package fr.nover.yana.installWizard;
 
 import fr.nover.yana.R;
 import android.content.SharedPreferences;
@@ -7,7 +7,7 @@ import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
-public class get_config extends PreferenceActivity {
+public class Config extends PreferenceActivity {
 
 	String [] Values = {"Mademoiselle" , "Madame", "Monsieur"};
     public static String Nom, Prénom, Pseudonyme, IPAdress, IPadress_ext, SSID;

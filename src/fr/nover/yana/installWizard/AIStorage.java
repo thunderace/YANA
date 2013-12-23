@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation;
+package fr.nover.yana.installWizard;
 
-import fr.nover.yana.assistant_installation.wizard.model.AbstractWizardModel;
-import fr.nover.yana.assistant_installation.wizard.model.BranchPage;
-import fr.nover.yana.assistant_installation.wizard.model.CustomerInfoPage;
-import fr.nover.yana.assistant_installation.wizard.model.IPAdressInfoPage;
-import fr.nover.yana.assistant_installation.wizard.model.IPAdress_ExtInfoPage;
-import fr.nover.yana.assistant_installation.wizard.model.MultipleFixedChoicePage;
-import fr.nover.yana.assistant_installation.wizard.model.PageList;
-import fr.nover.yana.assistant_installation.wizard.model.SingleFixedChoicePage;
-
+import fr.nover.yana.installWizard.model.AbstractWizardModel;
+import fr.nover.yana.installWizard.model.BranchPage;
+import fr.nover.yana.installWizard.model.CustomerInfoPage;
+import fr.nover.yana.installWizard.model.IPAdressInfoPage;
+import fr.nover.yana.installWizard.model.IPAdress_ExtInfoPage;
+import fr.nover.yana.installWizard.model.MultipleFixedChoicePage;
+import fr.nover.yana.installWizard.model.PageList;
+import fr.nover.yana.installWizard.model.SingleFixedChoicePage;
 import android.content.Context;
 
-public class Stockage_AI extends AbstractWizardModel {
-    public Stockage_AI(Context context) {
+public class AIStorage extends AbstractWizardModel {
+    public AIStorage(Context context) {
         super(context);
     }
 

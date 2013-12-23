@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package fr.nover.yana.assistant_installation.wizard.ui;
+package fr.nover.yana.installWizard.ui;
 
 import fr.nover.yana.R;
-import fr.nover.yana.assistant_installation.get_config;
-import fr.nover.yana.assistant_installation.wizard.model.AbstractWizardModel;
-import fr.nover.yana.assistant_installation.wizard.model.ModelCallbacks;
-import fr.nover.yana.assistant_installation.wizard.model.Page;
-import fr.nover.yana.assistant_installation.wizard.model.ReviewItem;
-
+import fr.nover.yana.installWizard.Config;
+import fr.nover.yana.installWizard.model.AbstractWizardModel;
+import fr.nover.yana.installWizard.model.ModelCallbacks;
+import fr.nover.yana.installWizard.model.Page;
+import fr.nover.yana.installWizard.model.ReviewItem;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -178,56 +177,56 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
             if(value.compareTo("(None)")==0){value="";}
             
             if(type.compareTo("Nom")==0){
-				get_config.Nom=value;}
+				Config.Nom=value;}
             
 			else if(type.compareTo("Prénom")==0){
-				get_config.Prénom=value;}
+				Config.Prénom=value;}
             
 			else if(type.compareTo("Pseudonyme")==0){
-				get_config.Pseudonyme=value;}
+				Config.Pseudonyme=value;}
             
 			else if(type.compareTo("Vous êtes un(e)...")==0){
 				Log.d("Réussite !", value);
 				if(value.compareTo("")==0){
-					get_config.Sexe=3;}
+					Config.Sexe=3;}
 				else if(value.compareTo("Mademoiselle")==0){
-					get_config.Sexe=0;}
+					Config.Sexe=0;}
 				else if(value.compareTo("Madame")==0){
-					get_config.Sexe=1;}
+					Config.Sexe=1;}
 				else if(value.compareTo("Monsieur")==0){
-					get_config.Sexe=2;}}
+					Config.Sexe=2;}}
             
 			else if(type.compareTo("Lien interne")==0){
-				get_config.IPAdress=value;}
+				Config.IPAdress=value;}
             
 			else if(type.contains("local")){
 				Log.d("SSID",value);
-				get_config.SSID=value;}
+				Config.SSID=value;}
 			            
 			else if(type.compareTo("Lien externe")==0){
-				get_config.IPadress_ext=value;}
+				Config.IPadress_ext=value;}
             
 			else if(type.compareTo("Vous voulez activer ...")==0){
 				
 				if(value.contains("ShakeService")){
-					get_config.ShakeService=true;}
-				else{get_config.ShakeService=false;}
+					Config.ShakeService=true;}
+				else{Config.ShakeService=false;}
 				
 				if(value.contains("événements")){
-					get_config.EventService=true;}
-				else{get_config.EventService=false;}
+					Config.EventService=true;}
+				else{Config.EventService=false;}
 				
 				if(value.contains("synthèse")){
-					get_config.TTS=true;}
-				else{get_config.TTS=false;}
+					Config.TTS=true;}
+				else{Config.TTS=false;}
 
 				if(value.contains("commandes")){
-					get_config.Update_Com=true;}
-				else{get_config.Update_Com=false;}}
+					Config.Update_Com=true;}
+				else{Config.Update_Com=false;}}
             
 			else if(type.contains("Internet")){
-				if(value.compareTo("Oui")==0){get_config.externe=true;}
-				else{get_config.externe=false;}}
+				if(value.compareTo("Oui")==0){Config.externe=true;}
+				else{Config.externe=false;}}
             
             return rootView;}
 
